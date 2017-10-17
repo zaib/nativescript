@@ -1,0 +1,9 @@
+<StackLayout>
+    
+    <TextField hint="Enter Prodcut Name" keyboardType="email" [(ngModel)]="search" autocorrect="false" autocapitalizationType="none"></TextField>
+    
+    <Button [text]="'Search'" class="submit-button" (tap)="submit()"></Button>
+
+    <ns-category-list></ns-category-list>
+
+</StackLayout>
