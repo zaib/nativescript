@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './products/product-detail.component';
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -8,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 
 import { CategoryService } from './categories/category.service';
 import { CategoryListComponent } from './categories/category.list.component';
+
+import { ProductsListComponent } from './products/products.list.component';
+import { ProductsService } from './products/products.service';
 
 import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
@@ -33,12 +37,15 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
         AppComponent,
         HomeComponent,
         CategoryListComponent,
+        ProductsListComponent,
+        ProductDetailComponent,
         ItemsComponent,
         ItemDetailComponent
     ],
     providers: [
         ItemService,
-        CategoryService
+        CategoryService,
+        ProductsService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

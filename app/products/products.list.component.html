@@ -1,0 +1,12 @@
+<WrapLayout>
+    <ListView [items]="list" class="list-group">
+        <ng-template let-item="item">
+            <GridLayout columns="80, *, auto" rows="auto, *">
+                <Image col="0" [nsRouterLink]="['/products/detail', item.sku]" [src]="item.thumbnailImage"></Image>
+                <Label col="1" [text]="item.name" class="list-group-item"></Label>
+                <Label col="2" [text]="'$' + item.regularPrice" class="list-group-item"></Label>
+                <!--<Label col="3" [text]="item.sku" class="list-group-item"></Label>-->
+            </GridLayout>            
+        </ng-template>
+    </ListView>
+</WrapLayout>

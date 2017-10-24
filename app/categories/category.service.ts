@@ -9,7 +9,7 @@ export class CategoryService {
 
     getCategoryList(): any {
         const url = "https://api.bestbuy.com/v1/categories?format=json&show=id,url,name&apiKey=NrzcAJWwiPaxVfuo9ZJ9X2XG";
-        return this.http.get(url).map((res:Response) => res.json());;
+        return this.http.get(url).map((res:Response) => res.json());
     }
 
     getCategoryItem(id: number): any {

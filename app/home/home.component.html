@@ -2,8 +2,12 @@
     
     <TextField hint="Enter Prodcut Name" keyboardType="email" [(ngModel)]="search" autocorrect="false" autocapitalizationType="none"></TextField>
     
-    <Button [text]="'Search'" class="submit-button" (tap)="submit()"></Button>
+    <Button [text]="'Search'" [nsRouterLink]="['/products', search]" class="submit-button"></Button>
 
+    <!--<Label [text]="search" class="list-group-item"></Label>-->
+    
     <ns-category-list></ns-category-list>
+    
+    <!--<ns-products-list search="search" ng-if="search"></ns-products-list>-->
 
 </StackLayout>

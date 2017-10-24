@@ -1,0 +1,16 @@
+Image {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+Image.product-thumbnail {
+    width: 50%;
+    height: 50%;
+    margin: 20px;
+}
+
+Label.product-title {
+    width: 100%;
+    display: block;
+}
