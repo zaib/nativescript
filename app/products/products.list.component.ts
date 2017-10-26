@@ -8,7 +8,7 @@ import { ProductsService } from "./products.service";
     selector: "ns-products-list",
     moduleId: module.id,
     templateUrl: "./products.list.component.html",
-    styleUrls: ["./styles/products.list.common.css", "./styles/products.list.css"]
+    styleUrls: ["./styles/products.common.css", "./styles/products.css"]
 })
 
 export class ProductsListComponent implements OnInit {
