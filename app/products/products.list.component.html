@@ -1,12 +1,25 @@
-<WrapLayout>
+<ActionBar title="Search Results for '{{filterTerm}}'" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" text="Back to ActionBar" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+
+<GridLayout sdkExampleTitle sdkToggleNavButton rows="auto, *">
+    <!-- >> activity-indicator-setting-busy-html -->
+    <ActivityIndicator row="1" busy="{{isLoadingData}}" (busyChange)="onBusyChanged($event)" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+    <!-- << activity-indicator-setting-busy-html -->
+</GridLayout>
+
+<WrapLayout *ngIf="list.length">
     <ListView [items]="list" class="list-group">
         <ng-template let-item="item">
             <GridLayout columns="80, *, auto" rows="auto, *">
                 <Image col="0" [nsRouterLink]="['/products/detail', item.sku]" [src]="item.thumbnailImage"></Image>
                 <Label col="1" [text]="item.name" class="list-group-item"></Label>
                 <Label col="2" [text]="'$' + item.regularPrice" class="list-group-item"></Label>
-                <!--<Label col="3" [text]="item.sku" class="list-group-item"></Label>-->
-            </GridLayout>            
+            </GridLayout>
         </ng-template>
     </ListView>
+</WrapLayout>
+
+<WrapLayout *ngIf="!list.length">
+        <Label text="No product found." class="empty-list"></Label>
 </WrapLayout>

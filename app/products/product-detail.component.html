@@ -1,14 +1,25 @@
-<ActionBar title="Product Details" class="action-bar"></ActionBar>
+<ActionBar title="Product Detail" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" text="Back to ActionBar" (tap)="goBack()"></NavigationButton>
+</ActionBar>
 <FlexboxLayout flexDirection="column" class="page">
+    <!-- product detail image -->
+    <Image [src]="item.image" class="product-thumbnail"></Image>
+
     <FlexboxLayout class="m-15">
-        <Label class="h2" [text]="item.name" class="product-title"></Label>
+        <Label>
+            <FormattedString>
+                <Span [text]="item.name" fontWeight="normal"></Span>
+            </FormattedString>
+        </Label>
     </FlexboxLayout>
 
-    <Image [src]="item.image" class="product-thumbnail"></Image>
-    
     <FlexboxLayout class="m-15">
-        <Label class="h2" [text]="'Regular Price'" class="product-title"></Label>
-        <Label class="h2" [text]="'$' + item.regularPrice" class="product-title"></Label>
+        <Label>
+            <FormattedString>
+                <Span text="Regular Price: " fontWeight="Bold"></Span>
+                <Span class="h2" [text]="'$' + item.regularPrice" class="product-title"></Span>        
+            </FormattedString>
+        </Label>
     </FlexboxLayout>
 
     <FlexboxLayout class="m-15">
@@ -16,10 +27,5 @@
         <Label class="h2" [text]="item.type" class="product-title"></Label>
     </FlexboxLayout>
 
-
-    <!--<FlexboxLayout class="m-100" ng-if="item.description">
-        <Label class="h2" [text]="'Description'" class="product-title"></Label>
-        <Label class="h2" [text]="item.description" class="product-title"></Label>
-    </FlexboxLayout>-->
 
 </FlexboxLayout>

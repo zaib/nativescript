@@ -10,7 +10,13 @@ export class ProductsService {
 
     getProductsList(searchQuery: string): Observable<any> {
         const url = 'https://api.bestbuy.com/v1/products(' + searchQuery.trim().split(' ').map(keyword => ('search=' + keyword)).join('&') +
-            ')?show=sku,name,mediumImage,thumbnailImage,regularPrice,shortDescription&pageSize=15&page=5&apiKey=NrzcAJWwiPaxVfuo9ZJ9X2XG&format=json';
+            ')?show=sku,name,mediumImage,thumbnailImage,regularPrice,shortDescription&pageSize=20&page=1&apiKey=NrzcAJWwiPaxVfuo9ZJ9X2XG&format=json';
+        return this.http.get(url).map(res => res.json());
+    }
+
+    getProductsByCategory(categoryName: string): Observable<any> {
+        const url = 'https://api.bestbuy.com/v1/products(categoryPath.name="' + categoryName + '")?format=json&show=sku,name,mediumImage,thumbnailImage,regularPrice,shortDescription&pageSize=20&page=1&apiKey=NrzcAJWwiPaxVfuo9ZJ9X2XG';
+        console.log(url);
         return this.http.get(url).map(res => res.json());
     }
 

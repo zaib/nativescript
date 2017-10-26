@@ -14,3 +14,10 @@ Label.product-title {
     width: 100%;
     display: block;
 }
+
+.empty-list {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}

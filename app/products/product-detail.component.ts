@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { RouterExtensions } from "nativescript-angular/router";
 
 import { Product } from "./product";
 import { ProductsService } from "./products.service";
@@ -15,7 +16,8 @@ export class ProductDetailComponent implements OnInit {
 
     constructor(
         private productsService: ProductsService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private routerExtensions: RouterExtensions
     ) { }
 
     ngOnInit(): void {
@@ -27,4 +29,9 @@ export class ProductDetailComponent implements OnInit {
             (error) => alert("No result found!, error!")
         );
     }
+
+    goBack() {
+        this.routerExtensions.backToPreviousPage();
+    }
+
 }
